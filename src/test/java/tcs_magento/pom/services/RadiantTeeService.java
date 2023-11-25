@@ -27,10 +27,5 @@ public class RadiantTeeService {
 
     public void goToCart() {
         DriverActions.click(this.radiantTeePage.get_lnk_shoppingcart_by());
-        try {
-            Thread.sleep(10000);
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
     }
 }
