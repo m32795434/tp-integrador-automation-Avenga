@@ -21,5 +21,6 @@ public class CompraRadiantTee {
         RadiantTeeService radiantTeeService = new RadiantTeeService();
         radiantTeeService.selectItemConfiguration(size, color, qty);
         radiantTeeService.addToCart();
+        radiantTeeService.goToCart();
     }
 }

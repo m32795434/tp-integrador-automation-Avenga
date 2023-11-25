@@ -19,16 +19,18 @@ public class RadiantTeeService {
 
     }
 
+    // separé las funcionalidades addtoCart y goToCart, por si a futuro necesito
+    // hacer un test sobre estas fucionalidades de forma aislada.
     public void addToCart() {
         DriverActions.click(this.radiantTeePage.get_btn_addtocart_by());
     }
 
     public void goToCart() {
-        // DriverActions.click(this.radiantTeePage.get_btn_addtocart_by());
-        // try {
-        // Thread.sleep(10000);
-        // } catch (Exception e) {
-        // // TODO: handle exception
-        // }
+        DriverActions.click(this.radiantTeePage.get_lnk_shoppingcart_by());
+        try {
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 }

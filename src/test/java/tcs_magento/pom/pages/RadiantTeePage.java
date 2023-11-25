@@ -22,6 +22,10 @@ public class RadiantTeePage {
         return By.id("product-addtocart-button");
     }
 
+    public By get_lnk_shoppingcart_by() {
+        return By.xpath("//a[contains(text(),'shopping cart')]");
+    }
+
     public String getUrlRadiantTeePage() {
         return this.urlRadiantTeePage;
     }
