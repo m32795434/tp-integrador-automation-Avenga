@@ -16,5 +16,19 @@ public class RadiantTeeService {
         DriverActions.click(this.radiantTeePage.get_div_size_by(size));
         DriverActions.click(this.radiantTeePage.get_div_color_by(color));
         DriverActions.insertText(this.radiantTeePage.get_number_qty_by(), qty);
+
+    }
+
+    public void addToCart() {
+        DriverActions.click(this.radiantTeePage.get_btn_addtocart_by());
+    }
+
+    public void goToCart() {
+        // DriverActions.click(this.radiantTeePage.get_btn_addtocart_by());
+        // try {
+        // Thread.sleep(10000);
+        // } catch (Exception e) {
+        // // TODO: handle exception
+        // }
     }
 }

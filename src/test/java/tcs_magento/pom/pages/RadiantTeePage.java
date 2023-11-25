@@ -18,6 +18,10 @@ public class RadiantTeePage {
         return By.id("qty");
     }
 
+    public By get_btn_addtocart_by() {
+        return By.id("product-addtocart-button");
+    }
+
     public String getUrlRadiantTeePage() {
         return this.urlRadiantTeePage;
     }

@@ -7,7 +7,7 @@
         <classes>
             <class name="tcs_magento.pom.CompraRadiantTee">
             <methods>
-            <include name="compraValida">
+            <include name="compraValida"/>
             </methods>
             </class>
         </classes>
