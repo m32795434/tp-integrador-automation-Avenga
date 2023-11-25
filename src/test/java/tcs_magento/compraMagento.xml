@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite Compra Magento">
+    <test name="Compra dos unidades Radiant Tee, L, azul - Camino Válido">
+    <parameter name="name" value="Radiant Tee" />
+    <parameter name="size" value="L" />
+    <parameter name="color" value="Blue" />
+    <parameter name="qty" value="2" />
+        <classes>
+            <class name="tcs_magento.pom.CompraItem">
+            <methods>
+            <include name="compraValida">
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
