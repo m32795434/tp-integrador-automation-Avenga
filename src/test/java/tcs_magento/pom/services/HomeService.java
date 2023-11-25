@@ -12,7 +12,7 @@ public class HomeService {
         this.homePage = new HomePage();
     }
 
-    public void selectItem(String name, String size, String color, String qty) {
+    public void selectItem(String name) {
         DriverActions.click(this.homePage.get_lnk_item_by(name));
     }
 }

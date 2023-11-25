@@ -4,9 +4,8 @@ import tcs_magento.pom.services.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import tcs_magento.pom.services.HomeService;
 
-public class CompraItem {
+public class CompraRadiantTee {
     @BeforeMethod
     public void setup() {
         DriverManager.create("chrome");
@@ -14,9 +13,12 @@ public class CompraItem {
     }
 
     @Test
-    @Parameters({ "name", "size", "color", "qty" })
-    public void compraValida(String name, String size, String color, String qty) {
+    @Parameters({ "size", "color", "qty" })
+    public void compraValida(String size, String color, String qty) {
         HomeService homeService = new HomeService();
-        homeService.selectItem(name, size, color, qty);
+        // Seleccionamos el ítem, y viajamos a la página del producto
+        homeService.selectItem("Radiant Tee");
+        RadiantTeeService radiantTeeService = new RadiantTeeService();
+        radiantTeeService.selectItemConfiguration(size, color, qty);
     }
 }
