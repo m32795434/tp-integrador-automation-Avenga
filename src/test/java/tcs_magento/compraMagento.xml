@@ -4,6 +4,14 @@
     <parameter name="size" value="L" />
     <parameter name="color" value="Blue" />
     <parameter name="qty" value="2" />
+    <parameter name="email" value="ChavitoPiPiPiPi@gmail.com" />
+    <parameter name="first" value="Chavo" />
+    <parameter name="last" value="Del Ocho" />
+    <parameter name="street" value="Barril del patio, hablar cualquier cosa con Don Ramon" />
+    <parameter name="city" value="La Vecindad" />
+    <parameter name="postal" value="3200" />
+    <parameter name="country" value="MX" />
+    <parameter name="phone" value="+523454415416" />
         <classes>
             <class name="tcs_magento.pom.CompraRadiantTee">
             <methods>

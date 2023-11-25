@@ -13,8 +13,9 @@ public class CompraRadiantTee {
     }
 
     @Test
-    @Parameters({ "size", "color", "qty" })
-    public void compraValida(String size, String color, String qty) {
+    @Parameters({ "size", "color", "qty", "email", "first", "last", "street", "city", "postal", "country", "phone" })
+    public void compraValida(String size, String color, String qty, String email, String first, String last,
+            String street, String city, String postal, String country, String phone) {
         HomeService homeService = new HomeService();
         // Seleccionamos el ítem, y viajamos a la página del producto
         homeService.selectItem("Radiant Tee");
@@ -24,5 +25,7 @@ public class CompraRadiantTee {
         radiantTeeService.goToCart();
         CartService cartService = new CartService();
         cartService.proceedToCheckOut();
+        ShippingService shippingService = new ShippingService();
+        shippingService.setRequiredShippingAddress(email, first, last, street, city, postal, country, phone);
     }
 }

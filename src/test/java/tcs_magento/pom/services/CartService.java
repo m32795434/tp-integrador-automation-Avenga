@@ -13,11 +13,5 @@ public class CartService {
 
     public void proceedToCheckOut() {
         DriverActions.click(this.cartPage.get_span_tocheckout_by());
-        // try
-        // {
-        // Thread.sleep(10000);
-        // } catch (Exception e) {
-        // // TODO: handle exception
-        // }
     }
 }
