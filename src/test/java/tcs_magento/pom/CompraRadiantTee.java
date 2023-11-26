@@ -41,5 +41,9 @@ public class CompraRadiantTee {
         SuccessService successService = new SuccessService();
         Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
                 "El mensaje de agradecimiento no es \"Thank you for purchase!\"");
+        Assert.assertTrue(successService.isEnabledContinueShopping(),
+                "El enlace \"Continue Shopping\"no está habilitado");
+        Assert.assertTrue(successService.isVisibleCreateAndAccount(),
+                "El enlace \"Create an Account\"no está visible");
     }
 }

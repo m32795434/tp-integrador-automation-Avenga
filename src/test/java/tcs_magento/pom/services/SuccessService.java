@@ -14,4 +14,12 @@ public class SuccessService {
     public String getThanksText() {
         return DriverActions.getText(this.successPage.get_span_thankyou_by());
     }
+
+    public boolean isEnabledContinueShopping() {
+        return DriverActions.isEnabled(this.successPage.get_lnk_continueshopping_by());
+    }
+
+    public boolean isVisibleCreateAndAccount() {
+        return DriverActions.isVisible(this.successPage.get_lnk_createanaccount_by());
+    }
 }

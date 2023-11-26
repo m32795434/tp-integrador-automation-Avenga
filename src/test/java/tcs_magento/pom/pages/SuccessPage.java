@@ -13,4 +13,11 @@ public class SuccessPage {
         return By.xpath("//span[@class='base']");
     }
 
+    public By get_lnk_continueshopping_by() {
+        return By.xpath("//a[@class='action primary continue']");
+    }
+
+    public By get_lnk_createanaccount_by() {
+        return By.xpath("//a[@class='action primary']");
+    }
 }
