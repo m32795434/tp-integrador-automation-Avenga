@@ -9,9 +9,12 @@
     <parameter name="last" value="Del Ocho" />
     <parameter name="street" value="Barril del patio, hablar cualquier cosa con Don Ramon" />
     <parameter name="city" value="La Vecindad" />
+    <parameter name="region" value="Entre Rios" />
     <parameter name="postal" value="3200" />
-    <parameter name="country" value="MX" />
+    <parameter name="country" value="AR" />
     <parameter name="phone" value="+523454415416" />
+    <!-- shipping_method starts in "1" because of the xPath selector. See "get_radio_shippingmethod_by" in the ShippingPage class-->
+    <parameter name="shipping_method" value="1" />
         <classes>
             <class name="tcs_magento.pom.CompraRadiantTee">
             <methods>

@@ -10,23 +10,27 @@ public class ShippingPage {
     }
 
     public By get_text_first_by() {
-        return By.id("D837J3R");
+        return By.xpath("//input[@name='firstname']");
     }
 
     public By get_text_last_by() {
-        return By.id("N4YDMKN");
+        return By.xpath("//input[@name='lastname']");
     }
 
     public By get_text_street_by() {
-        return By.id("RU3C8UR");
+        return By.xpath("//input[@name='street[0]']");
     }
 
     public By get_text_city_by() {
-        return By.id("BRY8N0Q");
+        return By.xpath("//input[@name='city']");
+    }
+
+    public By get_text_region_by() {
+        return By.xpath("//input[@name='region']");
     }
 
     public By get_text_postal_by() {
-        return By.id("FY6J4FO");
+        return By.xpath("//input[@name='postcode']");
     }
 
     public By get_option_country_by(String country) {
@@ -34,7 +38,11 @@ public class ShippingPage {
     }
 
     public By get_text_phone_by() {
-        return By.id("AQ5F8GH");
+        return By.xpath("//input[@name='telephone']");
+    }
+
+    public By get_radio_shippingmethod_by(String method) {
+        return By.xpath("(//input[starts-with(@name, 'ko_unique_')])[" + method + "]");
     }
 
     public String getUrlShippingPage() {

@@ -13,11 +13,14 @@ public class CompraRadiantTee {
     }
 
     @Test
-    @Parameters({ "size", "color", "qty", "email", "first", "last", "street", "city", "postal", "country", "phone" })
+    @Parameters({ "size", "color", "qty", "email", "first", "last", "street", "city", "region", "postal", "country",
+            "phone",
+            "shipping_method" })
     public void compraValida(String size, String color, String qty, String email, String first, String last,
-            String street, String city, String postal, String country, String phone) {
+            String street, String city, String region, String postal, String country, String phone,
+            String shipping_method) {
         HomeService homeService = new HomeService();
-        // Seleccionamos el ítem, y viajamos a la página del producto
+        // Select the item, and travel to the product's page
         homeService.selectItem("Radiant Tee");
         RadiantTeeService radiantTeeService = new RadiantTeeService();
         radiantTeeService.selectItemConfiguration(size, color, qty);
@@ -26,6 +29,7 @@ public class CompraRadiantTee {
         CartService cartService = new CartService();
         cartService.proceedToCheckOut();
         ShippingService shippingService = new ShippingService();
-        shippingService.setRequiredShippingAddress(email, first, last, street, city, postal, country, phone);
+        shippingService.setRequiredShippingAddress(email, first, last, street, city, region, postal, country, phone);
+        shippingService.selectShippingMethod(shipping_method);
     }
 }

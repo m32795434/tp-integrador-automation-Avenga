@@ -13,14 +13,24 @@ public class ShippingService {
 
     // only required fields
     public void setRequiredShippingAddress(String email, String first, String last, String street, String city,
+            String region,
             String postal, String country, String phone) {
+        DriverActions.click(this.shippingPage.get_option_country_by(country));
         DriverActions.insertText(this.shippingPage.get_email_by(), email);
         DriverActions.insertText(this.shippingPage.get_text_first_by(), first);
         DriverActions.insertText(this.shippingPage.get_text_last_by(), last);
+        DriverActions.insertText(this.shippingPage.get_text_street_by(), street);
+        DriverActions.insertText(this.shippingPage.get_text_city_by(), city);
+        DriverActions.insertText(this.shippingPage.get_text_region_by(), region);
+        DriverActions.insertText(this.shippingPage.get_text_postal_by(), postal);
+        DriverActions.insertText(this.shippingPage.get_text_phone_by(), phone);
+    }
 
-        DriverActions.click(this.shippingPage.get_option_country_by(country));
+    public void selectShippingMethod(String method) {
+        DriverActions.click(this.shippingPage.get_radio_shippingmethod_by(method));
+
         try {
-            Thread.sleep(10000);
+            Thread.sleep(100000);
         } catch (Exception e) {
             // TODO: handle exception
         }
