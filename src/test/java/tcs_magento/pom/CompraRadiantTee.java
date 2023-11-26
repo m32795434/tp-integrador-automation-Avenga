@@ -29,7 +29,11 @@ public class CompraRadiantTee {
         CartService cartService = new CartService();
         cartService.proceedToCheckOut();
         ShippingService shippingService = new ShippingService();
-        shippingService.setRequiredShippingAddress(email, first, last, street, city, region, postal, country, phone);
+        shippingService.setRequiredShippingAddress(email, first, last, street, city,
+                region, postal, country, phone);
         shippingService.selectShippingMethod(shipping_method);
+        shippingService.submitShippingForm();
+        PaymentService paymentService = new PaymentService();
+        paymentService.placeOrder();
     }
 }

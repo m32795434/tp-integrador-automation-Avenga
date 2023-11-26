@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 public class ShippingPage {
     private String urlShippingPage = "https://magento.softwaretestingboard.com/checkout/#shipping";
 
+    public String getUrlShippingPage() {
+        return this.urlShippingPage;
+    }
+
     public By get_email_by() {
         return By.xpath("//div[@class='control _with-tooltip']//input[@id='customer-email']");
     }
@@ -45,7 +49,8 @@ public class ShippingPage {
         return By.xpath("(//input[starts-with(@name, 'ko_unique_')])[" + method + "]");
     }
 
-    public String getUrlShippingPage() {
-        return this.urlShippingPage;
+    public By get_button_next_by(String method) {
+        return By.xpath("//button[@data-role='opc-continue']");
     }
+
 }

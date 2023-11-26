@@ -29,11 +29,10 @@ public class ShippingService {
     public void selectShippingMethod(String method) {
         DriverActions.click(this.shippingPage.get_radio_shippingmethod_by(method));
 
-        try {
-            Thread.sleep(100000);
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+    }
+
+    public void submitShippingForm() {
+        DriverActions.click(this.shippingPage.get_button_next_by(null));
     }
 
 }
