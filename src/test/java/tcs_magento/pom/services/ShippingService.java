@@ -15,6 +15,10 @@ public class ShippingService {
     public void setRequiredShippingAddress(String email, String first, String last, String street, String city,
             String postal, String country, String phone) {
         DriverActions.insertText(this.shippingPage.get_email_by(), email);
+        DriverActions.insertText(this.shippingPage.get_text_first_by(), first);
+        DriverActions.insertText(this.shippingPage.get_text_last_by(), last);
+
+        DriverActions.click(this.shippingPage.get_option_country_by(country));
         try {
             Thread.sleep(10000);
         } catch (Exception e) {

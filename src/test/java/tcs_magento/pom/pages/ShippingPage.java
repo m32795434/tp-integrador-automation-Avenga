@@ -33,6 +33,10 @@ public class ShippingPage {
         return By.xpath("//option[@value='" + country + "']");
     }
 
+    public By get_text_phone_by() {
+        return By.id("AQ5F8GH");
+    }
+
     public String getUrlShippingPage() {
         return this.urlShippingPage;
     }
