@@ -1,6 +1,8 @@
 package tcs_magento.pom;
 
 import tcs_magento.pom.services.*;
+
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -35,5 +37,9 @@ public class CompraRadiantTee {
         shippingService.submitShippingForm();
         PaymentService paymentService = new PaymentService();
         paymentService.placeOrder();
+        // Assertions
+        SuccessService successService = new SuccessService();
+        Assert.assertEquals(successService.getThanksText(), "Thank you for purchas!",
+                "El mensaje de agradecimiento no es \"Thank you for purchase!\"");
     }
 }
