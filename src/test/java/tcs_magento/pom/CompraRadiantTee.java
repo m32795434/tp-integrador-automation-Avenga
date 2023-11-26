@@ -39,7 +39,7 @@ public class CompraRadiantTee {
         paymentService.placeOrder();
         // Assertions
         SuccessService successService = new SuccessService();
-        Assert.assertEquals(successService.getThanksText(), "Thank you for purchas!",
+        Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
                 "El mensaje de agradecimiento no es \"Thank you for purchase!\"");
     }
 }
