@@ -10,7 +10,7 @@ public class SuccessPage {
     }
 
     public By get_span_thankyou_by() {
-        return By.xpath("//span[@class='base']");
+        return By.xpath("//span[@data-ui-id='page-title-wrapper']");
     }
 
     public By get_lnk_continueshopping_by() {
