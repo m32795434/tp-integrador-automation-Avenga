@@ -13,10 +13,15 @@ public class RadiantTeeService {
     }
 
     public void selectItemConfiguration(String size, String color, String qty) {
-        DriverActions.click(this.radiantTeePage.get_div_size_by(size));
-        DriverActions.click(this.radiantTeePage.get_div_color_by(color));
-        DriverActions.insertText(this.radiantTeePage.get_number_qty_by(), qty);
-
+        if (size != null && size != "") {
+            DriverActions.click(this.radiantTeePage.get_div_size_by(size));
+        }
+        if (color != null && color != "") {
+            DriverActions.click(this.radiantTeePage.get_div_color_by(color));
+        }
+        if (qty != null && qty != "") {
+            DriverActions.insertText(this.radiantTeePage.get_number_qty_by(), qty);
+        }
     }
 
     // separé las funcionalidades addtoCart y goToCart, por si a futuro necesito
@@ -27,5 +32,9 @@ public class RadiantTeeService {
 
     public void goToCart() {
         DriverActions.click(this.radiantTeePage.get_lnk_shoppingcart_by());
+    }
+
+    public boolean areVisibleRequiredWarnings() {
+        return DriverActions.areVisible(this.radiantTeePage.get_divs_warningrequired_by());
     }
 }

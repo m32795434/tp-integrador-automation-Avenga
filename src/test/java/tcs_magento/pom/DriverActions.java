@@ -58,16 +58,26 @@ public class DriverActions {
                                 ExpectedConditions.visibilityOfElementLocated(locator)).getText();
         }
 
-        public static Boolean isVisible(By element) {
+        public static Boolean isVisible(By locator) {
                 return DriverManager.getWait().until(
                                 ExpectedConditions.and(
-                                                ExpectedConditions.visibilityOfElementLocated(element)));
+                                                ExpectedConditions.visibilityOfElementLocated(locator)));
         }
 
-        public static Boolean isEnabled(By element) {
+        public static Boolean areVisible(By locator) {
+                try {
+                        return DriverManager.getWait().until(
+                                        ExpectedConditions.and(
+                                                        ExpectedConditions.visibilityOfAllElementsLocatedBy(locator)));
+                } catch (Exception e) {
+                        return false;
+                }
+        }
+
+        public static Boolean isEnabled(By locator) {
                 return DriverManager.getWait().until(
                                 ExpectedConditions.and(
-                                                ExpectedConditions.elementToBeClickable(element)));
+                                                ExpectedConditions.elementToBeClickable(locator)));
         }
 
 }

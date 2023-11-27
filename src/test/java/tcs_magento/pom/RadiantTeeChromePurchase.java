@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class CompraRadiantTee {
+public class RadiantTeeChromePurchase {
         @BeforeMethod
         public void setup() {
                 DriverManager.create("chrome");
@@ -18,7 +18,7 @@ public class CompraRadiantTee {
         @Parameters({ "size", "color", "qty", "email", "first", "last", "street", "city", "region", "postal", "country",
                         "phone",
                         "shipping_method" })
-        public void compraValida(String size, String color, String qty, String email, String first, String last,
+        public void validPurchase(String size, String color, String qty, String email, String first, String last,
                         String street, String city, String region, String postal, String country, String phone,
                         String shipping_method) {
                 HomeService homeService = new HomeService();
@@ -49,5 +49,23 @@ public class CompraRadiantTee {
                                 "El enlace \"Create an Account\"no está visible");
                 Assert.assertTrue(successService.orderIsANumber(),
                                 "No se obtuvo un número de orden, o el número de orden contiene caracteres");
+        }
+
+        // EXTRA!! 🥳--------------------------------------------
+        // Comprobamos que si falta rellenar el campo size y color, se muestran mensajes
+        // de advertencia (no el contenido - se puede seguir mejorando)
+        @Test
+        @Parameters({ "size", "color", "qty" })
+        public void withoutRequiredSizeAndColor(String size, String color, String qty) {
+                HomeService homeService = new HomeService();
+                // Select the item, and travel to the product's page
+                homeService.selectItem("Radiant Tee");
+                RadiantTeeService radiantTeeService = new RadiantTeeService();
+                radiantTeeService.selectItemConfiguration(size, color, qty);
+                radiantTeeService.addToCart();
+                // Tiene que haber algún mensaje de advertencia.(acomodar para que se puebe que
+                // son 2, y se checkee el contenido)
+                Assert.assertTrue(radiantTeeService.areVisibleRequiredWarnings(),
+                                "No se muestra por pantalla la advertencia de \"requerido\" para el campo color y/o size");
         }
 }

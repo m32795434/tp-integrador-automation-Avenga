@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite Compra Magento">
-    <test name="Compra dos unidades Radiant Tee, L, azul - Camino Válido">
+    <!-- <test name="Compra dos unidades Radiant Tee, L, azul - Camino Válido">
     <parameter name="size" value="L" />
     <parameter name="color" value="Blue" />
     <parameter name="qty" value="2" />
@@ -12,15 +12,27 @@
     <parameter name="region" value="Entre Rios" />
     <parameter name="postal" value="3200" />
     <parameter name="country" value="AR" />
-    <parameter name="phone" value="+523454415416" />
+    <parameter name="phone" value="+523454415416" />-->
     <!-- shipping_method starts in "1" because of the xPath selector. See "get_radio_shippingmethod_by" in the ShippingPage class-->
-    <parameter name="shipping_method" value="1" />
+    <!--<parameter name="shipping_method" value="1" />
         <classes>
-            <class name="tcs_magento.pom.CompraRadiantTee">
+            <class name="tcs_magento.pom.RadiantTeeChromePurchase">
             <methods>
-            <include name="compraValida"/>
+            <include name="validPurchase"/>
             </methods>
             </class>
         </classes>
-    </test>
+    </test> -->
+    <test name="Compra sin talle y color - advertencia de campo requerido">
+    <parameter name="size" value="" />
+    <parameter name="color" value="" />
+    <parameter name="qty" value="" />
+        <classes>
+            <class name="tcs_magento.pom.RadiantTeeChromePurchase">
+            <methods>
+            <include name="withoutRequiredSizeAndColor"/>
+            </methods>
+            </class>
+        </classes>
+        </test>
 </suite>

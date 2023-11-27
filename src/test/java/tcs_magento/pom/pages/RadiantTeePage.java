@@ -26,6 +26,10 @@ public class RadiantTeePage {
         return By.xpath("//a[contains(text(),'shopping cart')]");
     }
 
+    public By get_divs_warningrequired_by() {
+        return By.xpath("//div[starts-with(@id, 'super_attribute')]");
+    }
+
     public String getUrlRadiantTeePage() {
         return this.urlRadiantTeePage;
     }
