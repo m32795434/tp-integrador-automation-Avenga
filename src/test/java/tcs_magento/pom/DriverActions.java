@@ -18,13 +18,13 @@ public class DriverActions {
                 // DriverManager.getDriver().findElement(locator).click();
         }
 
-        public static void ignoringInterceptedClick(By locator) {
-                FluentWait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
-                                .withTimeout(Duration.ofSeconds(10))
-                                .ignoring(ElementClickInterceptedException.class);
+        // public static void ignoringInterceptedClick(By locator) {
+        // FluentWait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
+        // .withTimeout(Duration.ofSeconds(10))
+        // .ignoring(ElementClickInterceptedException.class);
 
-                wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
-        }
+        // wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        // }
 
         // public static void clickVisibleBtn(By locator) {
         // DriverManager.getWait().until(

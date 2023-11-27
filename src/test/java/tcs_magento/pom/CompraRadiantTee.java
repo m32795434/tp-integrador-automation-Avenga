@@ -36,6 +36,12 @@ public class CompraRadiantTee {
                 shippingService.selectShippingMethod(shipping_method);
                 shippingService.submitShippingForm();
                 PaymentService paymentService = new PaymentService();
+                // try {
+                // System.out.println("Waiting 2 seconds");
+                // Thread.sleep(2000);
+                // } catch (Exception e) {
+                // // TODO: handle exception
+                // }
                 paymentService.placeOrder();
                 // Assertions
                 SuccessService successService = new SuccessService();
