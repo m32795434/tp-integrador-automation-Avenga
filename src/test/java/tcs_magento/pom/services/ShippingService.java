@@ -32,7 +32,7 @@ public class ShippingService {
     }
 
     public void submitShippingForm() {
-        DriverActions.click(this.shippingPage.get_button_next_by(null));
+        DriverActions.click(this.shippingPage.get_button_next_by());
     }
 
 }

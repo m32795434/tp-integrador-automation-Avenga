@@ -12,9 +12,6 @@ public class PaymentService {
     }
 
     public void placeOrder() {
-        // I had to check only with visibilityOfElementLocated because the button didn't
-        // passed the elementToBeClickable check
-
         DriverActions.click(this.paymentPage.get_btn_placeorder_by());
     }
 }

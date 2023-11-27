@@ -33,6 +33,10 @@ public class DriverManager {
         return wait;
     }
 
+    public static void setWait(Wait<WebDriver> newWait) {
+        wait = newWait;
+    }
+
     public static void goSite(String url) {
         driver.get(url);
     }

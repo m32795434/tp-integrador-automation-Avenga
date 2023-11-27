@@ -36,16 +36,22 @@ public class CompraRadiantTee {
                 shippingService.selectShippingMethod(shipping_method);
                 shippingService.submitShippingForm();
                 PaymentService paymentService = new PaymentService();
-                // try {
-                // System.out.println("Waiting 2 seconds");
-                // Thread.sleep(2000);
-                // } catch (Exception e) {
-                // // TODO: handle exception
-                // }
+
                 paymentService.placeOrder();
                 // Assertions
                 SuccessService successService = new SuccessService();
-                Assert.assertEquals(successService.getThanksText(), "Thank you for your purchase!",
+
+                // El mensaje que tiene por defecto el span es "Checkout", NO "Thank you for
+                // your purchase!", estimo es el mensaje "hardcodeado"...para ver el mensaje que
+                // se muestra por pantalla, y comprobar ese, hay que forzar con un
+                // Thread.sleep(2000) y esperar el contenido que viene del servidor
+                try {
+                        System.out.println("Waiting 2 seconds");
+                        Thread.sleep(2000);
+                } catch (Exception e) {
+                        // TODO: handle exception
+                }
+                Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
                                 "El mensaje de agradecimiento no es \"Thank you for purchase!\"");
                 Assert.assertTrue(successService.isEnabledContinueShopping(),
                                 "El enlace \"Continue Shopping\"no está habilitado");

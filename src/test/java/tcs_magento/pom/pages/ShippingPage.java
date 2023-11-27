@@ -49,7 +49,7 @@ public class ShippingPage {
         return By.xpath("(//input[starts-with(@name, 'ko_unique_')])[" + method + "]");
     }
 
-    public By get_button_next_by(String method) {
+    public By get_button_next_by() {
         return By.xpath("//button[@data-role='opc-continue']");
     }
 
