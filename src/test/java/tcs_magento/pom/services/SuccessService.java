@@ -12,7 +12,7 @@ public class SuccessService {
     }
 
     public String getThanksText() {
-        return DriverActions.getText(this.successPage.get_span_thankyou_by());
+        return DriverActions.sleepgGetText(this.successPage.get_span_thankyou_by());
     }
 
     public boolean isEnabledContinueShopping() {

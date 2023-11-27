@@ -19,9 +19,9 @@ public class DriverManager {
         driver = WebDriverManager.getInstance(browser).create();
         driver.manage().window().maximize();
         wait = new FluentWait<>(driver)
-                .pollingEvery(Duration.ofSeconds(1))
-                .withTimeout(Duration.ofSeconds(10))
-                .ignoring(ElementClickInterceptedException.class);
+                // .pollingEvery(Duration.ofSeconds(1))
+                .withTimeout(Duration.ofSeconds(10));
+        // .ignoring(ElementClickInterceptedException.class);
         // wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

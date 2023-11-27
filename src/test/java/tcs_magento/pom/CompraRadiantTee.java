@@ -41,18 +41,8 @@ public class CompraRadiantTee {
                 // Assertions
                 SuccessService successService = new SuccessService();
 
-                // El mensaje que tiene por defecto el span es "Checkout", NO "Thank you for
-                // your purchase!", estimo es el mensaje "hardcodeado"...para ver el mensaje que
-                // se muestra por pantalla, y comprobar ese, hay que forzar con un
-                // Thread.sleep(2000) y esperar el contenido que viene del servidor
-                try {
-                        System.out.println("Waiting 2 seconds");
-                        Thread.sleep(2000);
-                } catch (Exception e) {
-                        // TODO: handle exception
-                }
                 Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
-                                "El mensaje de agradecimiento no es \"Thank you for purchase!\"");
+                                "El mensaje de agradecimiento no es \"Thank you for purchase!\". Si el mensaje \"actual\" es \"checkout\" es porque no llego aun la respuesta del servidor con el mensaje de agradecimiento.");
                 Assert.assertTrue(successService.isEnabledContinueShopping(),
                                 "El enlace \"Continue Shopping\"no está habilitado");
                 Assert.assertTrue(successService.isVisibleCreateAndAccount(),

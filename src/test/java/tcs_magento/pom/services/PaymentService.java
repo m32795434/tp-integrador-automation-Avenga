@@ -12,6 +12,6 @@ public class PaymentService {
     }
 
     public void placeOrder() {
-        DriverActions.click(this.paymentPage.get_btn_placeorder_by());
+        DriverActions.clickInterceptedButton(this.paymentPage.get_btn_placeorder_by());
     }
 }
