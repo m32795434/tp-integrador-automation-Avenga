@@ -14,11 +14,12 @@ public class PaymentService {
     public void placeOrder() {
         // I had to check only with visibilityOfElementLocated because the button didn't
         // passed the elementToBeClickable check
-        DriverActions.clickVisibleBtn(this.paymentPage.get_btn_placeorder_by());
-        // try {
-        // Thread.sleep(100000);
-        // } catch (Exception e) {
-        // // TODO: handle exception
-        // }
+        try {
+            System.out.println("Waiting 5 seconds");
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        DriverActions.ignoringInterceptedClick(this.paymentPage.get_btn_placeorder_by());
     }
 }

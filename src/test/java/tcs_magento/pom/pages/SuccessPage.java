@@ -20,4 +20,8 @@ public class SuccessPage {
     public By get_lnk_createanaccount_by() {
         return By.xpath("//a[@class='action primary']");
     }
+
+    public By get_span_ordernumber_by() {
+        return By.xpath("//div[@class='checkout-success']/p/span");
+    }
 }

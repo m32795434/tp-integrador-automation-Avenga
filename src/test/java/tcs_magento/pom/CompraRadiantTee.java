@@ -39,11 +39,13 @@ public class CompraRadiantTee {
         paymentService.placeOrder();
         // Assertions
         SuccessService successService = new SuccessService();
-        Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
+        Assert.assertEquals(successService.getThanksText(), "Thank you for your purchase!",
                 "El mensaje de agradecimiento no es \"Thank you for purchase!\"");
         Assert.assertTrue(successService.isEnabledContinueShopping(),
                 "El enlace \"Continue Shopping\"no está habilitado");
         Assert.assertTrue(successService.isVisibleCreateAndAccount(),
                 "El enlace \"Create an Account\"no está visible");
+        Assert.assertTrue(successService.orderIsANumber(),
+                "No se obtuvo un número de orden, o el número de orden contiene caracteres");
     }
 }

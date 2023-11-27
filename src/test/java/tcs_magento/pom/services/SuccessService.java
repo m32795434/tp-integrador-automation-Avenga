@@ -22,4 +22,14 @@ public class SuccessService {
     public boolean isVisibleCreateAndAccount() {
         return DriverActions.isVisible(this.successPage.get_lnk_createanaccount_by());
     }
+
+    public boolean orderIsANumber() {
+        String orderText = DriverActions.getText(this.successPage.get_span_ordernumber_by());
+        try {
+            Integer.parseInt(orderText);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
