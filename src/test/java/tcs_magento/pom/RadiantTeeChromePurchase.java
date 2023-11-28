@@ -2,6 +2,9 @@ package tcs_magento.pom;
 
 import tcs_magento.pom.services.*;
 
+import java.util.Map;
+
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -15,6 +18,13 @@ public class RadiantTeeChromePurchase {
         }
 
         @Test
+        // validPurchase sirve para testear que la compra se complete correctamente SI
+        // se ingresan todos los
+        // campos requeridos tanto para la seleccion de la prenda, como para la
+        // direccion de envío.
+        // Válido para País: Argentina.
+        // Al resto de los campos se les puede pasar cualquier valor (dentro de los que
+        // el sistema pueda aceptar para una compra exitosa).
         @Parameters({ "size", "color", "qty", "email", "first", "last", "street", "city", "region", "postal", "country",
                         "phone",
                         "shipping_method" })
@@ -52,11 +62,15 @@ public class RadiantTeeChromePurchase {
         }
 
         // EXTRA!! 🥳--------------------------------------------
-        // Comprobamos que si falta rellenar el campo size y color, se muestran mensajes
-        // de advertencia (no el contenido - se puede seguir mejorando)
+        // Con withoutRequiredAttributes(dependiendo de los parámetros) se puede
+        // comprobar que si el
+        // Usuario final NO rellena el campo
+        // size y/O color, y dá click en "Add to cart", se
+        // muestran los mensajes de advertencia "This is a required field." debajo del
+        // campo/s que no se rellenó/rellenaron.
         @Test
         @Parameters({ "size", "color", "qty" })
-        public void withoutRequiredSizeAndColor(String size, String color, String qty) {
+        public void withoutRequiredAttributes(String size, String color, String qty) {
                 HomeService homeService = new HomeService();
                 // Select the item, and travel to the product's page
                 homeService.selectItem("Radiant Tee");
@@ -65,7 +79,11 @@ public class RadiantTeeChromePurchase {
                 radiantTeeService.addToCart();
                 // Tiene que haber algún mensaje de advertencia.(acomodar para que se puebe que
                 // son 2, y se checkee el contenido)
-                Assert.assertTrue(radiantTeeService.areVisibleRequiredWarnings(),
-                                "No se muestra por pantalla la advertencia de \"requerido\" para el campo color y/o size");
+                Map<String, WebElement> warningMap = radiantTeeService.getAllRequiredWarningsMap();
+                for (Map.Entry<String, WebElement> set : warningMap.entrySet()) {
+                        Assert.assertEquals(set.getValue().getText(), "This is a required field.",
+                                        "No se muestra por pantalla la advertencia esperada para el campo: "
+                                                        + set.getKey());
+                }
         }
 }

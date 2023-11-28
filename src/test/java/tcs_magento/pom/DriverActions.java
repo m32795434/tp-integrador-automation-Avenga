@@ -1,6 +1,7 @@
 package tcs_magento.pom;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -58,21 +59,37 @@ public class DriverActions {
                                 ExpectedConditions.visibilityOfElementLocated(locator)).getText();
         }
 
+        public static WebElement getWebEl(By locator) {
+                return DriverManager.getWait().until(
+                                ExpectedConditions.visibilityOfElementLocated(locator));
+        }
+
         public static Boolean isVisible(By locator) {
                 return DriverManager.getWait().until(
                                 ExpectedConditions.and(
                                                 ExpectedConditions.visibilityOfElementLocated(locator)));
         }
 
-        public static Boolean areVisible(By locator) {
-                try {
-                        return DriverManager.getWait().until(
-                                        ExpectedConditions.and(
-                                                        ExpectedConditions.visibilityOfAllElementsLocatedBy(locator)));
-                } catch (Exception e) {
-                        return false;
-                }
-        }
+        // public static boolean checkVisibilityAllRequiredWarnings(List<String> els) {
+
+        // DriverManager.getWait().until(ExpectedConditions);
+        // }
+
+        // for (WebElement elemento : elementos) {
+        // // Esperar a que el atributo contenga el valor "false"
+        // wait.until(ExpectedConditions.attributeContains(elemento, "aria-checked",
+        // "false"));
+        // }
+
+        // public static Boolean areVisible(By locator) {
+        // try {
+        // return DriverManager.getWait().until(
+        // ExpectedConditions.and(
+        // ExpectedConditions.visibilityOfAllElementsLocatedBy(locator)));
+        // } catch (Exception e) {
+        // return false;
+        // }
+        // }
 
         public static Boolean isEnabled(By locator) {
                 return DriverManager.getWait().until(
