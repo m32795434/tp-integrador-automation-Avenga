@@ -37,7 +37,8 @@ public class RadiantTeeService {
     }
 
     // separé las funcionalidades addtoCart y goToCart, por si a futuro necesito
-    // hacer un test sobre estas fucionalidades de forma aislada.
+    // hacer un algún test relacionado estas fucionalidades de forma aislada, o test
+    // con caminos mas cortos
     public void addToCart() {
         DriverActions.click(this.radiantTeePage.get_btn_addtocart_by());
     }

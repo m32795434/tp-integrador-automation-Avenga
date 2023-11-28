@@ -48,7 +48,9 @@ public class RadiantTeeChromePurchase {
                 PaymentService paymentService = new PaymentService();
 
                 paymentService.placeOrder();
+
                 // Assertions
+
                 SuccessService successService = new SuccessService();
 
                 Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
@@ -77,9 +79,10 @@ public class RadiantTeeChromePurchase {
                 RadiantTeeService radiantTeeService = new RadiantTeeService();
                 radiantTeeService.selectItemConfiguration(size, color, qty);
                 radiantTeeService.addToCart();
-                // Tiene que haber algún mensaje de advertencia.(acomodar para que se puebe que
-                // son 2, y se checkee el contenido)
                 Map<String, WebElement> warningMap = radiantTeeService.getAllRequiredWarningsMap();
+
+                // Assertions
+
                 for (Map.Entry<String, WebElement> set : warningMap.entrySet()) {
                         Assert.assertEquals(set.getValue().getText(), "This is a required field.",
                                         "No se muestra por pantalla la advertencia esperada para el campo: "
