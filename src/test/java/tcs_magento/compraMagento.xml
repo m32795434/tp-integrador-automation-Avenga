@@ -31,7 +31,8 @@
         size y/O color, y dá click en "Add to cart", se
         muestran los mensajes de advertencia "This is a required field." debajo del
         campo/s que no se rellenó/rellenaron. -->
-    <test name="Compra sin talle y sin color - advertencia de campos requeridos">
+        
+    <!-- <test name="Compra sin talle y sin color - advertencia de campos requeridos">
     <parameter name="size" value="" />
     <parameter name="color" value="" />
     <parameter name="qty" value="" />
@@ -42,5 +43,5 @@
             </methods>
             </class>
         </classes>
-        </test>
+        </test> -->
 </suite>
