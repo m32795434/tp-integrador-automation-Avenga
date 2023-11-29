@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,16 +21,19 @@ public class DriverActions {
 
         public static void clickInterceptedButton(By locator) {
                 WebDriver driver = DriverManager.getDriver();
-                Wait<WebDriver> wait = new FluentWait<>(driver)
-                                .pollingEvery(Duration.ofSeconds(1))
-                                .withTimeout(Duration.ofSeconds(10))
-                                .ignoring(ElementClickInterceptedException.class);
-                DriverManager.setWait(wait);
-                DriverManager.getWait().until(
-                                ExpectedConditions.elementToBeClickable(locator)).click();
-                wait = new FluentWait<>(driver)
-                                .withTimeout(Duration.ofSeconds(10));
-                DriverManager.setWait(wait);
+                WebElement element = DriverManager.getWait().until(ExpectedConditions.elementToBeClickable(locator));
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+
+                // Wait<WebDriver> wait = new FluentWait<>(driver)
+                // .pollingEvery(Duration.ofSeconds(2))
+                // .withTimeout(Duration.ofSeconds(10))
+                // .ignoring(ElementClickInterceptedException.class);
+                // DriverManager.setWait(wait);
+                // DriverManager.getWait().until(
+                // ExpectedConditions.elementToBeClickable(locator)).click();
+                // wait = new FluentWait<>(driver)
+                // .withTimeout(Duration.ofSeconds(10));
+                // DriverManager.setWait(wait);
         }
 
         public static void insertText(By locator, String text) {
