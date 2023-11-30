@@ -21,6 +21,12 @@ dependencies {
 
 }
 
+// test {
+//     useTestNG()
+// }
 test {
-    useTestNG()
+    useTestNG {
+        suites 'src/test/java/tcs_magento/compraMagento.xml'
+    }
+    testLogging.showStandardStreams = true
 }
