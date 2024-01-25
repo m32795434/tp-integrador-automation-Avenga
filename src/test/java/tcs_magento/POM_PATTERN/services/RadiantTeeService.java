@@ -1,4 +1,4 @@
-package tcs_magento.pom.services;
+package tcs_magento.POM_PATTERN.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,9 +7,8 @@ import java.util.Map;
 
 import org.openqa.selenium.WebElement;
 
-import tcs_magento.pom.DriverActions;
-import tcs_magento.pom.pages.HomePage;
-import tcs_magento.pom.pages.RadiantTeePage;
+import tcs_magento.POM_PATTERN.DriverActions;
+import tcs_magento.POM_PATTERN.pages.RadiantTeePage;
 
 public class RadiantTeeService {
 

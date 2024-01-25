@@ -1,4 +1,4 @@
-package tcs_magento.pom.pages;
+package tcs_magento.POM_PATTERN.pages;
 
 import org.openqa.selenium.By;
 

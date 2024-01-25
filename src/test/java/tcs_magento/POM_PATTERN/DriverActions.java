@@ -1,16 +1,10 @@
-package tcs_magento.pom;
-
-import java.time.Duration;
-import java.util.List;
+package tcs_magento.POM_PATTERN;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 public class DriverActions {
         public static void click(By locator) {
@@ -35,7 +29,6 @@ public class DriverActions {
                 // .withTimeout(Duration.ofSeconds(10));
                 // DriverManager.setWait(wait);
         }
-
         public static void insertText(By locator, String text) {
                 WebElement tempEl = DriverManager.getWait().until(
                                 ExpectedConditions.visibilityOfElementLocated(locator));

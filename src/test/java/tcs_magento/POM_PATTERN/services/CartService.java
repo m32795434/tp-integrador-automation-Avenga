@@ -1,8 +1,7 @@
-package tcs_magento.pom.services;
+package tcs_magento.POM_PATTERN.services;
 
-import tcs_magento.pom.DriverActions;
-import tcs_magento.pom.pages.CartPage;
-import tcs_magento.pom.pages.HomePage;
+import tcs_magento.POM_PATTERN.DriverActions;
+import tcs_magento.POM_PATTERN.pages.CartPage;
 
 public class CartService {
     private CartPage cartPage;

@@ -1,9 +1,7 @@
-package tcs_magento.pom.services;
+package tcs_magento.POM_PATTERN.services;
 
-import org.openqa.selenium.By;
-
-import tcs_magento.pom.DriverActions;
-import tcs_magento.pom.pages.HomePage;
+import tcs_magento.POM_PATTERN.DriverActions;
+import tcs_magento.POM_PATTERN.pages.HomePage;
 
 public class HomeService {
     private HomePage homePage;

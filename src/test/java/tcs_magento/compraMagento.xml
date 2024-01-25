@@ -16,7 +16,7 @@
     <!-- shipping_method starts in "1" because of the xPath selector. See "get_radio_shippingmethod_by" in the ShippingPage class-->
     <parameter name="shipping_method" value="1" />
         <classes>
-            <class name="tcs_magento.pom.RadiantTeeChromePurchase">
+            <class name="tcs_magento.POM_PATTERN.RadiantTeeChromePurchase">
             <methods>
             <include name="validPurchase"/>
             </methods>
@@ -31,17 +31,17 @@
         size y/O color, y dá click en "Add to cart", se
         muestran los mensajes de advertencia "This is a required field." debajo del
         campo/s que no se rellenó/rellenaron. -->
-        <!--  
-     <test name="Compra sin talle y sin color - advertencia de campos requeridos">
+     
+    <test name="Compra sin talle y sin color - advertencia de campos requeridos">
     <parameter name="size" value="" />
     <parameter name="color" value="" />
     <parameter name="qty" value="" />
         <classes>
-            <class name="tcs_magento.pom.RadiantTeeChromePurchase">
+            <class name="tcs_magento.POM_PATTERN.RadiantTeeChromePurchase">
             <methods>
             <include name="withoutRequiredAttributes"/>
             </methods>
             </class>
         </classes>
-        </test> -->
+    </test> 
 </suite>

@@ -1,12 +1,10 @@
-package tcs_magento.pom;
+package tcs_magento.POM_PATTERN;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 

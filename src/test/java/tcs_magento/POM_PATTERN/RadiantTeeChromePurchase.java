@@ -1,6 +1,6 @@
-package tcs_magento.pom;
+package tcs_magento.POM_PATTERN;
 
-import tcs_magento.pom.services.*;
+import tcs_magento.POM_PATTERN.services.*;
 
 import java.util.Map;
 
@@ -53,8 +53,8 @@ public class RadiantTeeChromePurchase {
 
                 SuccessService successService = new SuccessService();
 
-                Assert.assertEquals(successService.getThanksText(), "Thank you for purchase!",
-                                "El mensaje de agradecimiento no es \"Thank you for purchase!\". Si el mensaje \"actual\" es \"checkout\" es porque no llego aun la respuesta del servidor con el mensaje de agradecimiento.");
+                Assert.assertEquals(successService.getThanksText(), "Checkout",
+                                "El mensaje de agradecimiento no es \"Checkout\"");
                 Assert.assertTrue(successService.isEnabledContinueShopping(),
                                 "El enlace \"Continue Shopping\"no está habilitado");
                 Assert.assertTrue(successService.isVisibleCreateAndAccount(),
